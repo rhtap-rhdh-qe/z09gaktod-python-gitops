@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: z09gaktod-python-gitops
+  description: This is GitOps manifest for z09gaktod-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=z09gaktod-python
+    backstage.io/kubernetes-id: z09gaktod-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: z09gaktod-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:z09gaktod-python
